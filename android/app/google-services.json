@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "8830979058",
+    "project_id": "login-6fba9",
+    "storage_bucket": "login-6fba9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:8830979058:android:287c3c9aab8b3cb151796b",
+        "android_client_info": {
+          "package_name": "com.example.logeo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMwZr3IJ4kFW1yuFu0WV2iGuqBseffGwc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

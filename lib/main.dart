@@ -1,4 +1,6 @@
+// main.dart
 import 'package:flutter/material.dart';
+import 'mis_juegos.dart';
 
 void main() {
   runApp(LoginApp());
@@ -24,46 +26,52 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'PASANAKU',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
+        title: Text('PASANAKU', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
       ),
-      backgroundColor: Colors.yellow, // Aquí establecemos el color de fondo
-      body: Center(
+      body: Container(
+        color: Colors.yellow, // Fondo amarillo
+        padding: EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: [
+            // Aquí van los campos de texto para el correo electrónico y la contraseña
             TextField(
               decoration: InputDecoration(
-                hintText: 'Usuario',
-                prefixIcon: Icon(Icons.person),
+                hintText: 'Correo electrónico',
               ),
             ),
-            SizedBox(height: 20),
             TextField(
+              obscureText: true,
               decoration: InputDecoration(
                 hintText: 'Contraseña',
-                prefixIcon: Icon(Icons.lock),
               ),
-              obscureText: true,
             ),
-            SizedBox(height: 20),
+            // Este es el botón de inicio de sesión
             ElevatedButton(
               onPressed: () {
+                // Aquí colocas la lógica para verificar el inicio de sesión
+                // Por ahora, simplemente navegará a la pantalla de MisJuegosScreen
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => WelcomePage()),
+                  MaterialPageRoute(builder: (context) => MisJuegosScreen()),
                 );
               },
-              child: Text('Iniciar sesión'),
+              child: Text(
+                'Iniciar sesión',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
-            SizedBox(height: 20),
-            Text(
-              '¿Olvidaste tu contraseña?',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.grey,
+            SizedBox(height: 10),
+            GestureDetector(
+              onTap: () {
+                // Aquí colocas la lógica para el enlace de "¿Olvidaste tu contraseña?"
+              },
+              child: Text(
+                '¿Olvidaste tu contraseña?',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue, // Cambiar el color del enlace si lo deseas
+                ),
               ),
             ),
           ],
@@ -81,7 +89,7 @@ class WelcomePage extends StatelessWidget {
         title: Text('Bienvenido a Juego de PASANAKU!!'),
       ),
       body: Container(
-        color: Colors.yellow,
+        color: Colors.yellow, // Fondo amarillo
         child: Center(
           child: Text(
             '¡Bienvenido!',
